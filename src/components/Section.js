@@ -33,6 +33,10 @@ const Wrap = styled.div`
     background-position:center;
     background-repeat: no-repeat;
     background-image:url('/images/model-3.jpg');
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
 
     `
 
@@ -43,6 +47,8 @@ text-align:center;
 
 `
 const ButtonGroup = styled.div`
+display:flex;
+margin-bottom:
 
 
 `
@@ -53,6 +59,12 @@ height: 40px;
 width:256px;
 color:white;
 display:flex;
+justify-content:center;
+align-items:center;
+border-radius:100px;
+opacity:0.85;
+text-transform:uppercase;
+font-size:12px;
 
 
 
