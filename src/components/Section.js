@@ -3,22 +3,22 @@ import React from 'react'
 import styled from 'styled-components'
 
 
-function Section() {
+function Section({title,description,leftBtnText,rightBtnText,backgroundImg}) {
     return (
-        <Wrap>
+        <Wrap bgImage = {backgroundImg}>
             <Text>
-                <h1>Model S</h1>
-                <p>Order Online for Touchless Delivery</p>
+                <h1>{title}</h1>
+                <p>{description}</p>
             </Text>
             <Buttons>
 
           
             <ButtonGroup>
                 <LeftButton>
-                    Custom Order
+                    {leftBtnText}
                 </LeftButton>
                 <RightButton>
-                    Existing Inventory
+                    {rightBtnText}
 
                 </RightButton>
 
@@ -29,7 +29,7 @@ function Section() {
     )
 }
 
-export default Section
+export default Section;
 
 const Wrap = styled.div`
     width:100vw;
@@ -42,10 +42,11 @@ const Wrap = styled.div`
     flex-direction:column;
     justify-content:space-between;
     align-items:center;
+    background-image: ${props => `url("/images/${props.bgImage}")`} ;  
 
     `
 
-
+   
 const Text = styled.div`
 padding-top:15vh;
 text-align:center;
@@ -78,10 +79,12 @@ margin:8px;
 
 `
 const RightButton = styled(LeftButton)`
+background: white;
+opacity: 0.65;
+color: black;
 
 `
 const DownArrow = styled.img`
-
 height: 40px;
 animation: animateDown infinite 1.5s;
 overflow-x: hidden;
