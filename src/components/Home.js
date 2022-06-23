@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import Section from './Section'
-import AppsIcon from '@mui/icons-material/Apps';function Home() {
+
+function Home() {
     return (
         // eslint-disable-next-line react/jsx-no-undef
         <Container>
-            <AppsIcon/>
+            
             <Section 
             title="Model S" 
             description = "Order Online for Touchless Delivery"
