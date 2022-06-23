@@ -3,27 +3,26 @@ import React from 'react'
 import styled from 'styled-components'
 
 
-function Section({title,description,leftBtnText,rightBtnText,backgroundImg}) {
+function Section({ title, description, leftBtnText, rightBtnText, backgroundImg }) {
     return (
-        <Wrap bgImage = {backgroundImg}>
+        <Wrap bgImage={backgroundImg}>
             <Text>
                 <h1>{title}</h1>
                 <p>{description}</p>
             </Text>
             <Buttons>
-
-          
-            <ButtonGroup>
-                <LeftButton>
-                    {leftBtnText}
-                </LeftButton>
-                <RightButton>
-                    {rightBtnText}
-
-                </RightButton>
-
-            </ButtonGroup>
-            <DownArrow src="/images/down-arrow.svg" />
+                <ButtonGroup>
+                    <LeftButton>
+                        {leftBtnText}
+                    </LeftButton>
+                    {
+                        rightBtnText &&
+                        <RightButton>
+                            {rightBtnText}
+                        </RightButton>
+                    }
+                </ButtonGroup>
+                <DownArrow src="/images/down-arrow.svg" />
             </Buttons>
         </Wrap>
     )
@@ -42,11 +41,11 @@ const Wrap = styled.div`
     flex-direction:column;
     justify-content:space-between;
     align-items:center;
-    background-image: ${props => `url("/images/${props.bgImage}")`} ;  
+    background-image: ${props => `url("/images/${props.bgImage}")`} ;
 
     `
 
-   
+
 const Text = styled.div`
 padding-top:15vh;
 text-align:center;
@@ -88,6 +87,7 @@ const DownArrow = styled.img`
 height: 40px;
 animation: animateDown infinite 1.5s;
 overflow-x: hidden;
+cursor:pointer;
 
 
 `
